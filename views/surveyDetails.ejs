@@ -1,0 +1,11 @@
+<%- include('Partials/header') %>
+<main>
+    <h2>survey Details</h2>
+    <p><strong>Name:</strong> <%= survey.name %></p>
+    <p><strong>Student ID:</strong> <%= survey.studentID %></p>
+    <p><strong>Birth Date:</strong> <%= survey.birthday? survey.purchaseDate.toISOString().slice(0, 10) : 'N/A' %></p>
+    <p><strong>Status:</strong> <%= survey.status %></p>
+    <p><strong>Notes:</strong> <%= survey.notes %></p>
+    <a href="/survey/edit/<%= survey._id %>">Edit survey</a>
+</main>
+<%- include('Partials/footer') %>

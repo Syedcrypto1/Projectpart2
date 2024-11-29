@@ -1,0 +1,53 @@
+<%- include('Partials/header') %>
+<main class="home-container">
+<img src="/survey/images/logo.jpg" alt="Survey Home Image" class="centered-image">
+    <h1 style="color: #FFD700;"> <br> surveys</h1>
+    <br>
+    <br>
+    <div class="services-container">
+        <a href="/surveys/add" class="service-button">Survey</a>
+        <a href="/surveys/lookup" class="service-button">List</a>
+    </div>
+</main>
+<%- include('Partials/footer') %>
+
+<style>
+    /* Home Section Styling */
+    .home-container {
+        background: #F5F5DC;
+        color: white;
+        padding: 40px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Services Layout - Flexbox */
+    .services-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* Service Button Styling */
+    .service-button {
+        padding: 12px 18px;
+        background-color: #FFd700;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    /* Hover Effect for Buttons */
+    .service-button:hover {
+        transform: translateY(-5px);
+        background-color: #e11d3f;
+    }
+</style>
+

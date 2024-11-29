@@ -1,0 +1,86 @@
+<%- include('Partials/header') %>
+
+<main class="inventory-list">
+    <h2>All surveys in Inventory</h2>
+    <% if (surveys.length > 0) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Birth Date</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% surveys.forEach(survey => { %>
+                    <tr>
+                        <td><%= survey.name %></td>
+                        <td><%= survey.studentID %></td>
+                        <td><%= survey.birthday? survey.birthday.toDateString() : 'N/A' %></td>
+                        <td><%= survey.status %></td>
+                        <td><%= survey.notes || 'N/A' %></td>
+                        <td>
+                            <a href="/surveys/edit/<%= survey._id %>">Edit</a>
+                            <!-- You can add a delete option here -->
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No surveys found in the inventory.</p>
+    <% } %>
+</main>
+
+<%- include('Partials/footer') %>
+
+<style>
+    .inventory-list {
+        padding: 20px;
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+        color: #2d3436;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 8px 12px;
+        text-align: left;
+        font-size: 0.9rem;
+    }
+
+    th {
+        background-color: #34495e;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    td {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    tr:last-child td {
+        border-bottom: none; /* Remove border on last row */
+    }
+
+    /* Row hover effect */
+    tr:hover td {
+        background-color: #f1f2f6;
+    }
+</style>
+

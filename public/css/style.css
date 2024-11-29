@@ -1,0 +1,147 @@
+/* Reset body and overall settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #80deea);
+    color: #2e4053;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    background: linear-gradient(to right, #00796b, #004d40);
+    color: #ffffff;
+    padding: 20px 30px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navigation link styling */
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #4db6ac;
+    color: #ffffff;
+}
+
+/* Hero section styling */
+.hero {
+    background: linear-gradient(to right, #8e44ad, #3498db);
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.hero button {
+    background: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background 0.3s;
+}
+
+.hero button:hover {
+    background: #c0392b;
+}
+
+/* Main content styling */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #004d40;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Button styling for survey and lookup */
+.button-primary {
+    background-color: #ff7043;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.button-primary:hover {
+    background-color: #ff5722;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 30px 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+}

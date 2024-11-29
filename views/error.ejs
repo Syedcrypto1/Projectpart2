@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-danger">Error: <%= message %></h1>
+            <h2 class="text-warning">Status: <%= error.status || 500 %></h2>
+
+            <% if (process.env.NODE_ENV === 'development') { %>
+                <h3>Stack Trace:</h3>
+                <pre><%= error.stack %></pre>
+            <% } else { %>
+                <p>Sorry, something went wrong. Please try again later.</p>
+            <% } %>
+
+            <hr>
+            <a href="/" class="btn btn-primary">Go to Home</a>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

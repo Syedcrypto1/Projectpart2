@@ -1,0 +1,13 @@
+<%- include('Partials/header') %>
+<main>
+    <h2>Lookup survey</h2>
+    <form action="/surveys/lookup" method="POST">
+        <label for="StudentID">Student Id:</label>
+        <input type="text" name="StudentID" id="StudentID" required><br>
+        <button type="submit">Search</button>
+    </form>
+    <% if (message) { %>
+        <p style="color: red;"><%= message %></p>
+    <% } %>
+</main>
+<%- include('Partials/footer') %>

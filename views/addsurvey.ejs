@@ -1,0 +1,96 @@
+<%- include('Partials/header') %>
+<main class="add-survey-form">
+    <h2>New survey</h2>
+    <br>
+    <br>
+    <form action="/surveys/add" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br>
+
+        <label for="studentID">Student ID:</label>
+        <input type="text" name="studentID" id="studentID"><br>
+
+        <label for="birthday">Birth Date:</label>
+        <input type="date" name="birthday" id="birthday"><br>
+
+        <label for="status">Status:</label>
+        <select name="status" id="status" required>
+           
+            <option value="Teacher">Teacher</option>
+            <option value="Student">Student</option>
+            <option value="Other">Other</option>
+        </select><br>
+
+        <label for="notes">Extra Notes:</label>
+        <textarea name="notes" id="notes"></textarea><br>
+
+        <br>
+        <br>
+
+        <button type="submit" class="submit-button">Add survey</button>
+    </form>
+
+</main>
+<%- include('Partials/footer') %>
+
+<style>
+    .add-survey-form {
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        color: #2d3436;
+        max-width: 400px;
+        margin: auto;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        font-family: 'Verdana', sans-serif;
+    }
+
+    .add-survey-form h2 {
+        color: #636e72;
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .add-survey-form input, 
+    .add-survey-form select, 
+    .add-survey-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #dfe6e9;
+        font-size: 0.9rem;
+        color: #2d3436;
+    }
+
+    .add-survey-form input:focus,
+    .add-survey-form select:focus,
+    .add-survey-form textarea:focus {
+        border-color: #74b9ff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(116, 185, 255, 0.4);
+    }
+
+    .submit-button {
+        background: linear-gradient(45deg, #6a89cc, #38ada9);
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .submit-button:hover {
+        background: linear-gradient(45deg, #4a69bd, #079992);
+        transform: scale(1.03);
+    }
+
+    .submit-button:active {
+        transform: scale(1);
+    }
+</style>
+

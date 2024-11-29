@@ -1,0 +1,28 @@
+<%- include('Partials/header') %>
+<main>
+    <h2>Edit survey</h2>
+    <form action="/surveys/edit/<%= survey._id %>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= survey.name %>" required><br>
+
+        <label for="studentID">Student ID:</label>
+        <input type="text" name="studentID" id="studentID" value="<%= survey.studentID %>"><br>
+
+        <label for="birthday">Birth Date:</label>
+        <input type="date" name="birthday" id="birthday" value="<%= survey.birthday ? survey.birthday.toISOString().slice(0, 10) : '' %>"><br>
+
+        <label for="status">Status:</label>
+        <select name="status" id="status" required>
+            <option value="Teacher" <%= survey.status === 'Teacher' ? 'selected' : '' %>>Teacher</option>
+            <option value="Student" <%= survey.status === 'Student' ? 'selected' : '' %>>Student</option>
+            <option value="Other" <%= survey.status === 'Other' ? 'selected' : '' %>>Other</option>
+           
+        </select><br>
+
+        <label for="notes">Extra Notes:</label>
+        <textarea name="notes" id="notes"><%= survey.notes %></textarea><br>
+
+        <button type="submit">Update survey</button>
+    </form>
+</main>
+<%- include('Partials/footer') %>
